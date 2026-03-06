@@ -1,0 +1,1 @@
+## Conifigures Constants - Helper File ##
