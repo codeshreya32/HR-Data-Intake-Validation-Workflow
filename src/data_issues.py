@@ -60,6 +60,14 @@ def add_spacing_issues_to_names(df, prob_extra_spaces=0.02, seed=42):
             original_name = str(df.loc[i, "Employee Name"])
             df.loc[i, "Employee Name"] = f"  {original_name} "
 
+            #Record issue in flag column
+            curr_flag = str(df.loc[i, "Data Issue Flag"])
+
+            if curr_flag:
+                df.loc[i, "Data Issue Flag"] = curr_flag + "; Extra Name Spaces"
+            else:
+                df.loc[i, "Data Issue Flag"] = "Extra Name Spaces"
+
     return df
 
 def add_missing_departments(df, missing_fraction=0.015, seed=42):
@@ -95,6 +103,13 @@ def add_missing_departments(df, missing_fraction=0.015, seed=42):
     for i in selected_inds:
         df.loc[i, "Department"] = None
 
+        curr_flag = str(df.loc[i, "Data Issue Flag"])
+
+        if curr_flag:
+            df.loc[i, "Data Issue Flag"] = curr_flag + "; Missing Department"
+        else:
+            df.loc[i, "Data Issue Flag"] = "Missing Department"
+
     return df
 
 def add_missing_employee_ids(df, missing_fraction=0.015, seed=42):
@@ -128,6 +143,13 @@ def add_missing_employee_ids(df, missing_fraction=0.015, seed=42):
 
     for i in selected_inds:
         df.loc[i, "Employee ID"] = None
+
+        curr_flag = str(df.loc[i, "Data Issue Flag"])
+
+        if curr_flag:
+            df.loc[i, "Data Issue Flag"] = curr_flag + "; Missing Employee ID"
+        else:
+            df.loc[i, "Data Issue Flag"] = "Missing Employee ID"
 
     return df
 
@@ -183,6 +205,13 @@ def add_duplicate_employee_ids(df, duplicate_fraction=0.015, seed=42):
 
     for target_idx, source_idx in zip(target_inds, source_inds):
         df.loc[target_idx, "Employee ID"] = df.loc[source_idx, "Employee ID"]
+
+        curr_flag = str(df.loc[target_idx, "Data Issue Flag"])
+
+        if curr_flag:
+            df.loc[target_idx, "Data Issue Flag"] = curr_flag + "; Duplicate Employee ID"
+        else:
+            df.loc[target_idx, "Data Issue Flag"] = "Duplicate Employee ID"
 
     return df
 

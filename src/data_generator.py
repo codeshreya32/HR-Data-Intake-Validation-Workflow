@@ -157,7 +157,11 @@ def generate_base_records(n=1500, seed=42):
             "Training Required": training_required,
             "Email": email,
             "Phone": phone,
-            "Submission Timestamp": submission_timestamp
+            "Submission Timestamp": submission_timestamp,
+
+            # Following addition of column tracks which data-quality issue(s) (if any) exist in the row
+            # Empty for now (because only clean data), but will be filled later in data_issues.py
+            "Data Issue Flag": ""
         }
 
         rows.append(row)
