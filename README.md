@@ -97,6 +97,16 @@ It includes sheets and queries for:
 
 ## Repository Structure
 
+HR-DATE-INTAKE-VALIDATION-WORKFLOW/
+
+|
+|-- src/                            # Python modules for simulating realistic (error-prone) HR data intake
+|-- screenshots/                    # Screenshots throughout development process
+|-- generate_hr_data.py             # Main driver script; performs data generation using modules from src
+|-- generated_hr_dataset.xlsx       # Excel file of generated synthetic dataset; output of main driver
+|-- hr_data_dashboard.xlsm          # Excel workbook prototype (macro-enabled)
+|-- README.md                       # Project documentation in markdown
+
 HR-DATA-INTAKE-VALIDATION-WORKFLOW/
 
 │
@@ -297,7 +307,6 @@ Use this if you want to explore the data generation side.
 
 #### Step 1: Run the generator
 
-```bash
 python generate_hr_data.py
 
 #### Step 2: Locate the output
@@ -420,3 +429,9 @@ In this prototype version, the correction workflow should be understood as:
 - not yet fully automated or enforced end-to-end
 
 It demonstrates the intended structure, but is not yet a complete production-ready system.
+
+---
+
+### What's Next?
+
+[coming soon: version 2 - will be linked/referenced here once available]
