@@ -98,6 +98,7 @@ It includes sheets and queries for:
 ## Repository Structure
 
 HR-DATA-INTAKE-VALIDATION-WORKFLOW/
+
 │
 ├── src/                              # Python modules for data generation and issue injection
 ├── screenshots/                      # Screenshots of workbook sheets, Power Query steps, and dashboard views
@@ -109,7 +110,6 @@ HR-DATA-INTAKE-VALIDATION-WORKFLOW/
 ## Workflow Structure
 
 Simplified:
-```text
 Python generation -> issue injection -> Excel intake -> cleaning -> issue review -> dashboard
 
 ## Workbook Structure
@@ -364,7 +364,6 @@ Rather than only identifying data issues, the prototype is structured to support
 
 The correction flow in the current prototype can be understood as:
 
-```text
 Issue Detection -> Current Issues View -> Correction Input -> Validation -> Final Resolved Data
 
 ---
