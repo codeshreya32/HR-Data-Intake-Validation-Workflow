@@ -97,7 +97,6 @@ It includes sheets and queries for:
 
 ## Repository Structure
 
-```text
 HR-DATA-INTAKE-VALIDATION-WORKFLOW/
 │
 ├── src/                              # Python modules for data generation and issue injection
